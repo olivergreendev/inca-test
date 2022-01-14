@@ -2,8 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { User, UsersService } from '../services/users.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-user-data',
@@ -25,10 +24,7 @@ export class UserDataComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  // userData: any;
-  // userData: Observable<User[]>;
   ngOnInit() {
-    // this.userData = this.userService.getUserData();
     this.userService.getUserData().subscribe(data => {
       this.userData = data["users"];
       this.dataSource.data = data["users"];

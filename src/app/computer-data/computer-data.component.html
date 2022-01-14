@@ -1,3 +1,59 @@
 <div class="content-wrapper">
     <h1>Computer Data</h1>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" >
+
+          <ng-container matColumnDef="userID">
+            <th mat-header-cell *matHeaderCellDef> User ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ip">
+            <th mat-header-cell *matHeaderCellDef> IP </th>
+            <td mat-cell *matCellDef="let element"> {{element.ip}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="computerName">
+            <th mat-header-cell *matHeaderCellDef> Computer Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.computerName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="adminUsername">
+            <th mat-header-cell *matHeaderCellDef> Admin Username </th>
+            <td mat-cell *matCellDef="let element"> {{element.adminUsername}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="adminKey">
+            <th mat-header-cell *matHeaderCellDef> Admin Key </th>
+            <td mat-cell *matCellDef="let element">
+                {{element.adminKey}}
+                <!-- <button mat-raised-button>Get Admin Key</button> -->
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="active">
+            <th mat-header-cell *matHeaderCellDef> Active </th>
+            <td mat-cell *matCellDef="let element">
+                <span [class]="{'true': element.active === true,
+                                'false': element.active === false,
+                                'computer-active-state': true}"
+                                >{{element.active}}</span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="runtime">
+            <th mat-header-cell *matHeaderCellDef> Runtime </th>
+            <td mat-cell *matCellDef="let element"> {{element.runtime}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       [pageSize]="5"
+                       showFirstLastButtons 
+                       aria-label="Select page of computers to display">
+        </mat-paginator>
+      </div>      
 </div>

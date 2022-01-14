@@ -29,10 +29,6 @@ export class ComputerDataComponent implements AfterViewInit {
       this.dataSource.data = data["computers"];
     });
   }
-
-  alertAdminKey(message: string) {
-    window.alert();
-  }
 }
 
 export interface ComputerModel {

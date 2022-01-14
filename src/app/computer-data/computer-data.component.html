@@ -37,7 +37,7 @@
                 <span [class]="{'true': element.active === true,
                                 'false': element.active === false,
                                 'computer-active-state': true}"
-                                >{{element.active}}</span>
+                                >{{element.active ? 'Running' : 'Stopped'}}</span>
             </td>
           </ng-container>
 

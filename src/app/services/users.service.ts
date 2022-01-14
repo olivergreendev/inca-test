@@ -22,8 +22,7 @@ export class UsersService {
   readonly URL = 'https://testbed.illapa.cloud/db/testbed';
 
   getUserData() {
-    return this.http.get<User[]>(this.URL).subscribe((result: Array<User>) => {
-      console.log('Success', result);
-    });
+    // return this.http.get<User[]>(this.URL);
+    return this.http.get(this.URL);
   }
 }

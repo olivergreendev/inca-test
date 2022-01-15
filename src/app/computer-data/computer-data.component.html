@@ -25,9 +25,10 @@
 
           <ng-container matColumnDef="adminKey">
             <th mat-header-cell *matHeaderCellDef> Admin Key </th>
-            <td mat-cell *matCellDef="let element">
+            <td mat-cell *matCellDef="let element" id="adminKey">
                 {{element.adminKey}}
-                <!-- <button mat-raised-button>Get Admin Key</button> -->
+                <!-- <span *ngIf="showKey[element.id]">{{element.adminKey}}</span> -->
+                <!-- <button mat-raised-button (click)="toggleAdminKey()">Get Admin Key</button> -->
             </td>
           </ng-container>
 

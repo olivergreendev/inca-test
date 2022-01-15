@@ -29,6 +29,10 @@ export class ComputerDataComponent implements AfterViewInit {
       this.dataSource.data = data["computers"];
     });
   }
+
+  toggleAdminKey(elementID: number) {
+    window.alert(elementID);
+  }
 }
 
 export interface ComputerModel {

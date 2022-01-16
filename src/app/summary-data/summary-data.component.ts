@@ -10,13 +10,9 @@ export class SummaryDataComponent implements OnInit {
 
 constructor(private summaryService: SummaryService) { }
   
-  // Go through all of the computers, count how many of them have 'active' as 'true'
   activeComputers: number = 0;
-  // Go through all of the computers, count how many of them have 'active' as 'false'
   inactiveComputers: number = 0;
-  // Go through all of the users, add up their ages, divide by how many users there are
   averageAge: number = 0;
-  // Go through all of the users, keep a count of how many users are 25 or over
   usersOverTwentyFive: number = 0;
 
   ngOnInit() {
@@ -39,6 +35,6 @@ constructor(private summaryService: SummaryService) { }
           this.inactiveComputers++;
         }
       }
-    })
+    });
   }
 }
